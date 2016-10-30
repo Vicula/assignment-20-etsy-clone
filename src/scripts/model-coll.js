@@ -19,7 +19,7 @@ var etsyCollection = Backbone.Collection.extend({
   },
 
    initialize: function(qryStr){
-      this.url = 	"https://openapi.etsy.com/v2/listings/active.js?api_key=a4rxc0l54zj63ku2c0of02ic"
+      this.url = 	"https://openapi.etsy.com/v2/listings/active.js?includes=Images,Shop&api_key=a4rxc0l54zj63ku2c0of02ic"
    }
 })
 

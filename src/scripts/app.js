@@ -2,6 +2,8 @@ const $ = require('jquery')
 const Backbone = require('Backbone')
 
 const etsyCollection = require('./model-coll.js')
+const buildPage = require('./view-constructor.js')
+const homeTemplateFn = require('./view-templates.js')
 
 
 var appHolder = document.querySelector('#app-container')
@@ -17,6 +19,8 @@ const appRouter = Backbone.Router.extend({
       var coll = new etsyCollection()
       coll.fetch().then(function(){
          console.log(coll.models)
+         var view = new buildPage('#app-container', homeTemplateFn)
+         view.render(coll.models)
 
       })
    },
@@ -28,8 +32,3 @@ const appRouter = Backbone.Router.extend({
 
 
 const app = new appRouter();
-
-
-
-
-console.log('hey')
