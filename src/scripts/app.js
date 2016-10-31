@@ -1,7 +1,7 @@
 const $ = require('jquery')
 const Backbone = require('Backbone')
 
-const etsyCollection = require('./model-coll.js')
+const view = require('./model-coll.js')
 const buildPage = require('./view-constructor.js')
 const homeTemplateFn = require('./view-templates.js')
 
@@ -15,8 +15,15 @@ const appRouter = Backbone.Router.extend({
       "" : "showHomePage"
    },
 
+   showMorePage: function(id){
+      var modl = new view.etsyModel(id)
+      modl.fetch().then(function(){
+         console.log(modl.attributes)
+      })
+   },
+
    showHomePage: function(){
-      var coll = new etsyCollection()
+      var coll = new view.etsyCollection()
       coll.fetch().then(function(){
          console.log(coll.models)
          var view = new buildPage('#app-container', homeTemplateFn)

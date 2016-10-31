@@ -8,9 +8,23 @@ var homeTemplateFn = function(collectionData){
       var homeInfoBox = document.createElement('div')
          contentBoxHolder.appendChild(homeInfoBox)
          var infoJumbotron = document.createElement('div')
+            infoJumbotron.classList = "jumbotron"
             homeInfoBox.appendChild(infoJumbotron)
+            var jumboTitle = document.createElement('h1')
+               infoJumbotron.appendChild(jumboTitle)
+               jumboTitle.textContent = "Whoever you are, find whatever you're into"
+            var jumboSearch = document.createElement('div')
+               jumboSearch.classList = "input-group"
+               jumboSearch.innerHTML = `
+               <input type="text" class="form-control">
+               <div class="input-group-btn">
+                  <button type="button" class="btn btn-default">Search</button>
+               </div>
+               `
+               infoJumbotron.appendChild(jumboSearch)
          var infoBlocksBox = document.createElement('div')
             homeInfoBox.appendChild(infoBlocksBox)
+
       var homeContentBox = document.createElement('div')
          homeContentBox.classList = "container-fluid"
          contentBoxHolder.appendChild(homeContentBox)
@@ -23,34 +37,39 @@ var homeTemplateFn = function(collectionData){
             var contentTileHolder = document.createElement('div')
                contentListingBox.appendChild(contentTileHolder)
                collectionData.forEach(function(crntData){
-                  var crntProduct = crntData.attributes
-                  var crntImg = crntProduct.Images[0].url_fullxfull
-                  console.log(crntProduct)
 
+                  // console.log(crntData)
+                  var crntProduct = crntData.attributes
+                  var crntImg = crntProduct.Images[0].url_170x135
+                  console.log(crntProduct)
+                  var crntProductLink = document.createElement('a')
+                     crntProductLink.href = '#moreInfo/' + crntProduct.listing_id
+                     contentTileHolder.appendChild(crntProductLink)
                   var crntProductHolder = document.createElement('div')
-                     crntProductHolder.classList = "col-sm-4"
+                     crntProductHolder.classList = "col-sm-4 crntProduct"
 
                      crntProductHolder.style.backgroundImage = `url("${crntImg}")`
-                     contentListingBox.appendChild(crntProductHolder)
                      console.log(crntProductHolder.style)
-
-
-
+                     crntProductLink.appendChild(crntProductHolder)
                      var crntProdInfo = document.createElement('div')
+                        crntProdInfo.classList = "crntProdInfo"
                         crntProductHolder.appendChild(crntProdInfo)
-                        var productName = document.createElement('h4')
+                        var productName = document.createElement('h1')
                            crntProdInfo.appendChild(productName)
-                           productName.textContent = crntProduct.title
+
+                           productName.textContent = crntProduct.title.slice(0, 27) + '...'
                         var productCreator = document.createElement('p')
+                           productCreator.classList = "crntCreator"
                            crntProdInfo.appendChild(productCreator)
-                           // productCreator.textContent =
+                           productCreator.textContent = crntProduct.Shop.shop_name
                         var productPrice = document.createElement('p')
+                           productPrice.classList = "crntPrice"
                            crntProdInfo.appendChild(productPrice)
-
-
+                           productPrice.textContent = crntProduct.price
 
                })
             contentListingBox.innerHTML += `
+
                <nav aria-label="Page navigation">
                   <ul class="pagination">
                      <li>
