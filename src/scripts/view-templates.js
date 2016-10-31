@@ -5,10 +5,6 @@ var homeTemplateFn = function(collectionData){
       // contentBoxHolder.classList = "container"
       var homeNavBox = document.createElement('nav')
          contentBoxHolder.appendChild(homeNavBox)
-         // var navLogo = document.createElement('img')
-         //    navLogo.src = "../../Images/etsy-logo.png"
-         //    navLogo.width = '60px'
-         //    homeNavBox.appendChild('navLogo')
          homeNavBox.innerHTML = `
             <img src="../images/etsy-logo.png" class="navLogo">
             <div class="navIcons">
@@ -16,7 +12,6 @@ var homeTemplateFn = function(collectionData){
                <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
             </div>
-
          `
       var homeInfoBox = document.createElement('div')
          contentBoxHolder.appendChild(homeInfoBox)
@@ -37,16 +32,77 @@ var homeTemplateFn = function(collectionData){
                `
                infoJumbotron.appendChild(jumboSearch)
          var infoBlocksBox = document.createElement('div')
+            infoBlocksBox.classList = "homeInfoBlocksbox"
             homeInfoBox.appendChild(infoBlocksBox)
+            infoBlocksBox.innerHTML = `
+               <div class="col-sm-4">
+                  <img src="https://www.etsy.com/assets/dist/images/homepage/vesta/how_etsy_works_1.20160609191624.png">
+                  <h3>Get something you love</h3>
+                  <p>Our marketplace is a world of vintage and handmade goods</p>
+               </div>
+               <div class="col-sm-4">
+                  <img src="https://www.etsy.com/assets/dist/images/homepage/vesta/how_etsy_works_2.20160609191624.png">
+                  <h3>Find your new favorite shop</h3>
+                  <p>More than a million independent sellers from everywhere are right here</p>
+               </div>
+               <div class="col-sm-4">
+                  <img src="https://www.etsy.com/assets/dist/images/homepage/vesta/how_etsy_works_3.20160609191624.png">
+                  <h3>Buy safely and securely</h3>
+                  <p>Etsy protects every transaction, so shop with confidence</p>
+               </div>
+            `
 
+      var homePageTitle = document.createElement('h1')
+         homePageTitle.classList = "homePageTitle"
+         homePageTitle.textContent = "Browse our selection.."
+         contentBoxHolder.appendChild(homePageTitle)
       var homeContentBox = document.createElement('div')
          homeContentBox.classList = "container-fluid"
          contentBoxHolder.appendChild(homeContentBox)
          var contentNavBox = document.createElement('div')
-            contentNavBox.classList = "col-sm-3"
+            contentNavBox.classList = "col-sm-3 contentNavBox"
             homeContentBox.appendChild(contentNavBox)
+            var catTitle = document.createElement('h4')
+               catTitle.textContent = "Show results for :"
+               contentNavBox.appendChild(catTitle)
+            var catBox = document.createElement('div')
+               contentNavBox.appendChild(catBox)
+               catBox.innerHTML = `
+                  <h5>All Categories</h5>
+                  <ul>
+                     <a href="#"><li>Accessories</li></a>
+                     <a href="#"><li>Toys & Games</li></a>
+                     <a href="#"><li>Shoes</li></a>
+                     <a href="#"><li>Jewelry</li></a>
+                     <a href="#"><li>Clothing</li></a>
+                     <a href="#"><li>Pet Supplies</li></a>
+                     <a href="#"><li>Bath & Beauty</li></a>
+                     <a href="#"><li>Home & Living</li></a>
+                     <a href="#"><li>Bags & Purses</li></a>
+                  <a href="#"><li>Books, Movies & Music</li></a>
+                  </ul>
+               `
+            var searchTitle = document.createElement('h4')
+               searchTitle.textContent = "Refine your search :"
+               contentNavBox.appendChild(searchTitle)
+            var searchBox = document.createElement('div')
+               contentNavBox.appendChild(searchBox)
+               searchBox.innerHTML = `
+               <h5>Item type</h5>
+               <input type="checkbox">All items<br>
+               <input type="checkbox">Handmade<br>
+               <input type="checkbox">Vintage<br>
+               <hr>
+               <h5>Price ($)</h5>
+               <input type="checkbox">Any Price<br>
+               <input type="checkbox">Under 25$<br>
+               <input type="checkbox">$25 to $50<br>
+               <input type="checkbox">$50 to $100<br>
+               <input type="checkbox">Over $100<br>
+
+               `
          var contentListingBox = document.createElement('div')
-            contentListingBox.classList = "col-sm-9"
+            contentListingBox.classList = "col-sm-9 contentListingBox"
             homeContentBox.appendChild(contentListingBox)
             var contentTileHolder = document.createElement('div')
                contentListingBox.appendChild(contentTileHolder)
@@ -71,7 +127,7 @@ var homeTemplateFn = function(collectionData){
                         var productName = document.createElement('h1')
                            crntProdInfo.appendChild(productName)
 
-                           productName.textContent = crntProduct.title.slice(0, 27) + '...'
+                           productName.textContent = crntProduct.title.slice(0, 25) + '...'
                         var productCreator = document.createElement('p')
                            productCreator.classList = "crntCreator"
                            crntProdInfo.appendChild(productCreator)
@@ -81,10 +137,11 @@ var homeTemplateFn = function(collectionData){
                            crntProdInfo.appendChild(productPrice)
                            productPrice.textContent = crntProduct.price
 
+
                })
             contentListingBox.innerHTML += `
 
-               <nav aria-label="Page navigation">
+               <nav class="productPagination" aria-label="Page navigation">
                   <ul class="pagination">
                      <li>
                         <a href="#" aria-label="Previous">
@@ -104,13 +161,21 @@ var homeTemplateFn = function(collectionData){
                   </ul>
                </nav>
             `
-
+            var homePageFooter = document.createElement('div')
+               homePageFooter.classList = "container-fluid homePageFooter"
+               contentBoxHolder.appendChild(homePageFooter)
 
    return contentBoxHolder
 }
 
 var detailsTemplateFn = function(jsonData){
 
+   var closerLookHolder = document.createElement('div')
+
+
+
+
+   return closerLookHolder
 
 
 }

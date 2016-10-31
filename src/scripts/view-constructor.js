@@ -1,4 +1,4 @@
-var buildPage = function(contentHolder , viewTemplate){
+var buildPage = function(contentHolder , viewTemplate, coll){
    // console.log(this)
 
    var domEl = contentHolder
@@ -12,6 +12,10 @@ var buildPage = function(contentHolder , viewTemplate){
       tgtEl.appendChild(pageConts)
       // console.log(pageConts)
    }
+
+   coll.on('sync', this.render)
+
+
 }
 
 module.exports = buildPage

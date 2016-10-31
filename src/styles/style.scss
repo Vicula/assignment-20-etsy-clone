@@ -11,6 +11,82 @@ body {
 
 #app-container {
 
+	.productPagination{
+		width: 30%;
+		
+		margin: auto;
+	}
+
+	.homePageFooter {
+		height: 75px;
+		border-top: 20px #ddd solid;
+		background: rgb(255,156,62);
+		margin-top: 50px;
+	}
+
+	.contentListingBox {
+		margin-left: 50px;
+	}
+
+	.contentNavBox {
+
+
+		width: 15%;
+		margin: 20px;
+		margin-left: 55px;
+		margin-right: 20px;
+		// padding: 10px;
+		// padding-left: 20px;
+
+		div {
+			background: #ddd;
+			color: #000;
+			padding: 20px;
+			margin: 20px 0;
+			margin-bottom: 25px;
+			h5 {
+				color: rgb(255,156,62);
+			}
+
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+
+				a{
+					color: #000;
+				}
+			}
+		}
+	}
+
+	.homePageTitle{
+		color: rgb(255,156,62);
+		font-size: 60px;
+		margin-left: 8%;
+		margin-bottom: 50px;
+	}
+
+	.homeInfoBlocksbox{
+		margin-bottom: 50px;
+		background: #DDD;
+		height: 225px;
+		text-align: center;
+		padding-top: 20px;
+
+		img {
+
+		}
+
+		h3 {
+			color: black;
+		}
+		p {
+			color: #777;
+		}
+
+	}
+
 	.navIcons {
 		display: inline-block;
 		float: right;
@@ -38,6 +114,9 @@ body {
 		width: 20%;
 		left: -75px;
 
+	}
+	.jumbotron {
+		margin-bottom: 0;
 	}
 
 	.jumboTitle {
