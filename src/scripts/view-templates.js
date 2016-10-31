@@ -5,20 +5,34 @@ var homeTemplateFn = function(collectionData){
       // contentBoxHolder.classList = "container"
       var homeNavBox = document.createElement('nav')
          contentBoxHolder.appendChild(homeNavBox)
+         // var navLogo = document.createElement('img')
+         //    navLogo.src = "../../Images/etsy-logo.png"
+         //    navLogo.width = '60px'
+         //    homeNavBox.appendChild('navLogo')
+         homeNavBox.innerHTML = `
+            <img src="../images/etsy-logo.png" class="navLogo">
+            <div class="navIcons">
+               <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+               <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
+               <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+            </div>
+
+         `
       var homeInfoBox = document.createElement('div')
          contentBoxHolder.appendChild(homeInfoBox)
          var infoJumbotron = document.createElement('div')
             infoJumbotron.classList = "jumbotron"
             homeInfoBox.appendChild(infoJumbotron)
             var jumboTitle = document.createElement('h1')
+               jumboTitle.classList = "jumboTitle"
                infoJumbotron.appendChild(jumboTitle)
                jumboTitle.textContent = "Whoever you are, find whatever you're into"
             var jumboSearch = document.createElement('div')
-               jumboSearch.classList = "input-group"
+               jumboSearch.classList = "input-group jumboSearch"
                jumboSearch.innerHTML = `
-               <input type="text" class="form-control">
+               <input type="text" class="form-control jumboSearchBar">
                <div class="input-group-btn">
-                  <button type="button" class="btn btn-default">Search</button>
+                  <button type="button" class="btn btn-default jumboSearchBut">Search</button>
                </div>
                `
                infoJumbotron.appendChild(jumboSearch)
@@ -93,6 +107,12 @@ var homeTemplateFn = function(collectionData){
 
 
    return contentBoxHolder
+}
+
+var detailsTemplateFn = function(jsonData){
+
+
+
 }
 
 module.exports = homeTemplateFn

@@ -41,13 +41,13 @@ var etsyCollection = Backbone.Collection.extend({
 })
 
 
-function getData(data) {
-      if (data.ok) {
-            // do something with the data here
-        } else {
-            alert(data.error);
-      }
-}
+// function getData(data) {
+//       if (data.ok) {
+//             // do something with the data here
+//         } else {
+//             alert(data.error);
+//       }
+// }
 
 module.exports = {
    etsyCollection: etsyCollection,

@@ -26,8 +26,8 @@ const appRouter = Backbone.Router.extend({
       var coll = new view.etsyCollection()
       coll.fetch().then(function(){
          console.log(coll.models)
-         var view = new buildPage('#app-container', homeTemplateFn)
-         view.render(coll.models)
+         var views = new buildPage('#app-container', homeTemplateFn)
+         views.render(coll.models)
 
       })
    },

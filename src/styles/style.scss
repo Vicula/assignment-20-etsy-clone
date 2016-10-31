@@ -11,6 +11,49 @@ body {
 
 #app-container {
 
+	.navIcons {
+		display: inline-block;
+		float: right;
+		width: 20%;
+
+		span{
+			float: right;
+			color: rgb(255,156,62);
+			width: 20%;
+			font-size: 25px;
+			margin-top: 30px;
+			padding: 0;
+
+
+		}
+		span:hover {
+			 text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+		}
+	}
+
+	.navLogo{
+		margin: 10px auto;
+		padding: 0;
+		position: relative;
+		width: 20%;
+		left: -75px;
+
+	}
+
+	.jumboTitle {
+		width: 50%;
+		margin-left: 20px;
+	}
+
+	.jumboSearch {
+		width: 35%;
+		margin-left: 25px;
+	}
+	.jumboSearchBut {
+		background: rgb(255,156,62);
+
+	}
+
 	.crntProduct:hover {
 		border: 5px rgb(255,156,62) solid;
 	}

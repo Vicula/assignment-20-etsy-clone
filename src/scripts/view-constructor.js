@@ -10,7 +10,7 @@ var buildPage = function(contentHolder , viewTemplate){
       var tgtEl = document.querySelector(domEl)
       var pageConts = buildHTMLTemplate(data)
       tgtEl.appendChild(pageConts)
-      console.log(pageConts)
+      // console.log(pageConts)
    }
 }
 
