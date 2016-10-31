@@ -1,3 +1,5 @@
+var thisHolder = document.querySelector('#app-container')
+
 var homeTemplateFn = function(collectionData){
    // console.log(collectionData)
 
@@ -170,7 +172,61 @@ var homeTemplateFn = function(collectionData){
 
 var detailsTemplateFn = function(jsonData){
 
+   var clsrCrntProduct = jsonData.attributes.results[0]
+
+   console.log(clsrCrntProduct)
+
+
    var closerLookHolder = document.createElement('div')
+      closerLookHolder.classList = "moreInfoBox"
+      var infoContentBox = document.createElement('div')
+         infoContentBox.classList = "infoInnerBox"
+         closerLookHolder.appendChild(infoContentBox)
+         var infoBoxNav = document.createElement('nav')
+            var closeButton = document.createElement('span')
+               closeButton.classList = "glyphicon glyphicon-remove-circle closerLookClose"
+               infoBoxNav.appendChild(closeButton)
+            // infoBoxNav.innerHTML = `
+            //    <span class="glyphicon glyphicon-remove-circle closerLookClose"></span>
+            // `
+
+            // var closeButton = document.querySelector('.closerLookClose')
+            // closeButton.addEventListener('click', function(){
+            //    thisHolder.removeChild(closerLookHolder)
+            //
+            // })
+
+            closeButton.addEventListener('click', function(){
+               thisHolder.removeChild(closerLookHolder)
+               // thisHolder.innerHTML = ''
+               // window.location.hash = 'home'
+
+            })
+
+            infoContentBox.appendChild(infoBoxNav)
+         var infoBoxContent = document.createElement('div')
+            infoContentBox.appendChild(infoBoxContent)
+            var productPic = document.createElement('div')
+               productPic.classList = "col-sm-7 closerProductPic"
+               // productPic.style.backgroundImage = `url('${clsrCrntProduct.Images[0].url_570xN}')center, center, no-repeat`
+               productPic.style.backgroundImage = `url(${clsrCrntProduct.Images[0].url_570xN})`
+               productPic.style.backgroundSize = 'cover'
+               productPic.style.height = '75vh'
+               productPic.style.width = '100%'
+
+
+
+
+               // productPic.style.backgroundImage = `url('${clsrCrntProduct.Images[0].url_570xN}')center, center, no-repeat`
+               infoBoxContent.appendChild(productPic)
+            var productInfo = document.createElement('div')
+               productInfo.classList = "col-sm-5 closerProductInfo"
+               productInfo.innerHTML = `
+                  <h4>${clsrCrntProduct.title}</h4>
+                  <h5>${clsrCrntProduct.price}</h5>
+                  <p>${clsrCrntProduct.description}</p>
+               `
+               infoBoxContent.appendChild(productInfo)
 
 
 
@@ -180,4 +236,7 @@ var detailsTemplateFn = function(jsonData){
 
 }
 
-module.exports = homeTemplateFn
+module.exports = {
+   homeTemplateFn: homeTemplateFn,
+   detailsTemplateFn: detailsTemplateFn
+}

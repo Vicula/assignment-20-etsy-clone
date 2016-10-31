@@ -16,7 +16,7 @@ var etsyModel = Backbone.Model.extend({
   // },
 
    initialize: function(productId){
-      this.url = "https://openapi.etsy.com/v2/listings/" + productId + ".js?callback=?&api_key=a4rxc0l54zj63ku2c0of02ic"
+      this.url = "https://openapi.etsy.com/v2/listings/" + productId + ".js?callback=?&includes=Images,Shop&api_key=a4rxc0l54zj63ku2c0of02ic"
 
    }
 
