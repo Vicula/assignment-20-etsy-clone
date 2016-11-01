@@ -16,16 +16,36 @@ const appRouter = Backbone.Router.extend({
    },
 
    showMorePage: function(id){
-      var modl = new view.etsyModel(id)
-      var closerView = new buildPage('#app-container', templates.detailsTemplateFn, modl)
-      modl.fetch()
+      if(appHolder.innerHTML === ''){
+         var coll = new view.etsyCollection()
+         var views = new buildPage('#app-container', templates.homeTemplateFn, coll)
+
+         coll.fetch()
+
+         var modl = new view.etsyModel(id)
+         var closerView = new buildPage('#app-container', templates.detailsTemplateFn, modl)
+         modl.fetch()
+      } else {
+         var modl = new view.etsyModel(id)
+         var closerView = new buildPage('#app-container', templates.detailsTemplateFn, modl)
+         modl.fetch()
+      }
+      // var modl = new view.etsyModel(id)
+      // var closerView = new buildPage('#app-container', templates.detailsTemplateFn, modl)
+      // modl.fetch()
    },
 
    showHomePage: function(){
-      var coll = new view.etsyCollection()
-      var views = new buildPage('#app-container', templates.homeTemplateFn, coll)
+      // console.log(appHolder.innerHTML)
+      if(appHolder.innerHTML === ''){
+         var coll = new view.etsyCollection()
+         var views = new buildPage('#app-container', templates.homeTemplateFn, coll)
 
-      coll.fetch()
+         coll.fetch()
+      } else {
+
+      }
+
    },
 
    initialize: function(){

@@ -113,7 +113,7 @@ var homeTemplateFn = function(collectionData){
                   // console.log(crntData)
                   var crntProduct = crntData.attributes
                   var crntImg = crntProduct.Images[0].url_170x135
-                  console.log(crntProduct)
+                  // console.log(crntProduct)
                   var crntProductLink = document.createElement('a')
                      crntProductLink.href = '#moreInfo/' + crntProduct.listing_id
                      contentTileHolder.appendChild(crntProductLink)
@@ -121,7 +121,7 @@ var homeTemplateFn = function(collectionData){
                      crntProductHolder.classList = "col-sm-4 crntProduct"
 
                      crntProductHolder.style.backgroundImage = `url("${crntImg}")`
-                     console.log(crntProductHolder.style)
+                     // console.log(crntProductHolder.style)
                      crntProductLink.appendChild(crntProductHolder)
                      var crntProdInfo = document.createElement('div')
                         crntProdInfo.classList = "crntProdInfo"
@@ -174,6 +174,12 @@ var detailsTemplateFn = function(jsonData){
 
    var clsrCrntProduct = jsonData.attributes.results[0]
 
+   // if (thisHolder.innerHTML === ''){
+   //
+   //    var fillContent = homeTemplateFn(collectionData)
+   //    thisHolder.appendChild(fillContent)
+   // }
+
    console.log(clsrCrntProduct)
 
 
@@ -199,7 +205,7 @@ var detailsTemplateFn = function(jsonData){
             closeButton.addEventListener('click', function(){
                thisHolder.removeChild(closerLookHolder)
                // thisHolder.innerHTML = ''
-               // window.location.hash = 'home'
+               window.location.hash = ''
 
             })
 
@@ -211,7 +217,7 @@ var detailsTemplateFn = function(jsonData){
                // productPic.style.backgroundImage = `url('${clsrCrntProduct.Images[0].url_570xN}')center, center, no-repeat`
                productPic.style.backgroundImage = `url(${clsrCrntProduct.Images[0].url_570xN})`
                productPic.style.backgroundSize = 'cover'
-               productPic.style.height = '75vh'
+               productPic.style.height = '70vh'
                productPic.style.width = '100%'
 
 

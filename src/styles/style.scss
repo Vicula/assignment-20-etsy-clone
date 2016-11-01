@@ -52,9 +52,12 @@ body {
 			.closerProductInfo{
 				position: absolute;
 				overflow-y: scroll;
-				background: radial-gradient(circle, rgba(255, 255, 255, 0.75)70%, rgba(255, 255, 255, 0));
+
+				background: linear-gradient(to right, rgba(175, 175, 175, 0.8)60%, rgba(255, 255, 255, 0));
 				color: #000;
-				height: 80%;
+				height: 93%;
+				width: 35%;
+				padding: 20px;
 
 				p{
 					font-size: 12px;
