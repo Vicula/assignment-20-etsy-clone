@@ -203,9 +203,13 @@ var detailsTemplateFn = function(jsonData){
             // })
 
             closeButton.addEventListener('click', function(){
+               let crntPagePosition = document.body.scrollTop
                thisHolder.removeChild(closerLookHolder)
                // thisHolder.innerHTML = ''
                window.location.hash = ''
+
+               document.body.scrollTop = crntPagePosition
+
 
             })
 
@@ -217,7 +221,7 @@ var detailsTemplateFn = function(jsonData){
                // productPic.style.backgroundImage = `url('${clsrCrntProduct.Images[0].url_570xN}')center, center, no-repeat`
                productPic.style.backgroundImage = `url(${clsrCrntProduct.Images[0].url_570xN})`
                productPic.style.backgroundSize = 'cover'
-               productPic.style.height = '70vh'
+               productPic.style.height = '65vh'
                productPic.style.width = '100%'
 
 

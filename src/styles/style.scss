@@ -45,7 +45,7 @@ body {
 			}
 
 			.closerProductPic{
-
+				background: no-repeat center center;
 
 			}
 
@@ -53,14 +53,16 @@ body {
 				position: absolute;
 				overflow-y: scroll;
 
-				background: linear-gradient(to right, rgba(175, 175, 175, 0.8)60%, rgba(255, 255, 255, 0));
+				background: linear-gradient(to right, rgba(200, 200, 200, 0.8)60%, rgba(255, 255, 255, 0));
 				color: #000;
 				height: 93%;
 				width: 35%;
 				padding: 20px;
 
 				p{
+					padding-right: 20px;
 					font-size: 12px;
+					background: linear-gradient(to right,rgba(175,175,175,0.4)60%, rgba(0,0,0,0));
 				}
 
 			}
